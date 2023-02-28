@@ -14,6 +14,7 @@ async def check_token(token: str):
             algorithms="HS256",
             key=security_settings.eschool_secret
         )
+        print("Ok")
         return {"Ok??": "Yes its ok"}
 
     except JWTError as err:
