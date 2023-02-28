@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title  %}Main{% endblock %}
+{% block content  %}
+
+<div class="container">
+    <div class="row">
+        <div class="col md-3">
+            <div class="card my-2">
+                <div class="card-header">
+                    <img src="{{ url_for('statics', path='img/logo.svg') }}" alt="" width="50" height="50">
+                    <h3>Welcome to ESchool authorization page</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a href="/login" class="btn btn-dark btn-block btn-sm m-1">Login</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="btn btn-dark btn-block btn-sm m-1">Logout</a>
+                    </li>
+                    <li class="list-group-item">
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            <a href="/oauth/login/journal">
+                                <img src="{{ url_for('statics',path='img/kid_logo.png')}}" width="50" height="50"
+                                     border="2" alt="">Journal
+                            </a>
+                        </p>
+                        <p>
+                            <a href="/oauth/login/diary">
+                                <img src="{{ url_for('statics',path='img/kid_logo.png')}}" width="50" height="50"
+                                     border="2" alt="">Diary
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% with msg=msg %}
+{% include "alerts.html" %}
+{% endwith %}
+{% endblock %}

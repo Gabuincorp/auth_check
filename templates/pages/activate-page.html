@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h5 class="display-5">Activate Code</h5>
+        <div class="text-danger font-weight-bold">
+            {% for error in errors %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </div>
+
+        <div class="text-success font-weight-bold">
+            {% if msg %}
+            <div class="badge bg-success text-wrap font-weight-bold" style="font-size: large;">
+                {{msg}}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="row my-5">
+        <form method="POST">
+            <div class="mb-3">
+                <label>Last five numbers of your phone</label>
+                <input type="text" required placeholder="last five numbers of your phone" name="phone" value="{{phone}}"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Code</label>
+                <input type="text" required placeholder="Enter Code that you receive on email" value="{{code}}"
+                       name="code" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/" class="btn btn-primary">Home</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
